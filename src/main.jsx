@@ -21,7 +21,7 @@ const projects = [
     description: '分析工廠的採購、庫存與生產資料，預估物料何時到貨、未來需要多少，以及哪些訂單可能缺料，協助現場人員提早調整採購與生產安排。',
     result: '平均誤差約 1.12 天',
     color: 'ocean',
-    mark: '智',
+    icon: 'factory',
     href: 'https://github.com/chen-tu-yi/C1',
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     description: '測試視覺模型面對未曾訓練過的工業瑕疵、醫療影像與數位病理時，能否正確找出目標；並比較不同文字描述方式，找出更穩定的使用方法。',
     result: '跨 3 種專業影像場域',
     color: 'alpine',
-    mark: '視',
+    icon: 'vision',
     href: 'https://github.com/chen-tu-yi',
   },
   {
@@ -45,7 +45,7 @@ const projects = [
     description: '依照成長股的趨勢與價格收斂型態，建立美股資料蒐集和篩選流程；再利用股價位置、成交量與產業強度等資訊，嘗試找出可能突破的股票。',
     result: '條件篩選＋模型研究',
     color: 'coast',
-    mark: '勢',
+    icon: 'trend',
     href: 'https://github.com/chen-tu-yi/trading-project-Stan',
   },
 ]
@@ -61,6 +61,49 @@ const skills = ['Python / Java / SQL', 'Machine Learning', 'Feature Engineering'
 
 function Arrow({ diagonal = false }) {
   return <span aria-hidden="true">{diagonal ? '↗' : '→'}</span>
+}
+
+function ProjectIcon({ name }) {
+  const common = {
+    viewBox: '0 0 100 100',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 2.4,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    'aria-hidden': true,
+  }
+
+  if (name === 'factory') {
+    return (
+      <svg {...common}>
+        <path d="M11 84V44l24 12V41l24 15V25h29v59H11Z" />
+        <path d="M68 25V13h11v12M22 68h8M43 68h8M68 41h11M68 54h11M68 67h11" />
+        <path d="M19 34c8-8 17-12 27-12" strokeDasharray="3 6" />
+        <circle cx="49" cy="20" r="3" fill="currentColor" stroke="none" />
+      </svg>
+    )
+  }
+
+  if (name === 'vision') {
+    return (
+      <svg {...common}>
+        <path d="M15 50s13-22 35-22 35 22 35 22-13 22-35 22S15 50 15 50Z" />
+        <circle cx="50" cy="50" r="11" />
+        <circle cx="50" cy="50" r="3" fill="currentColor" stroke="none" />
+        <path d="M10 29V15h14M76 15h14v14M90 71v14H76M24 85H10V71" />
+      </svg>
+    )
+  }
+
+  return (
+    <svg {...common}>
+      <path d="M13 83h76M18 76l17-19 14 8 16-28 17 8" />
+      <path d="M27 33v22M22 39h10M48 44v20M43 49h10M68 20v25M63 28h10M83 35v22M78 42h10" />
+      <circle cx="35" cy="57" r="3" fill="currentColor" stroke="none" />
+      <circle cx="65" cy="37" r="3" fill="currentColor" stroke="none" />
+    </svg>
+  )
 }
 
 function App() {
@@ -154,7 +197,7 @@ function App() {
             {projects.map((project) => (
               <article className="project" key={project.number} data-reveal>
                 <div className={`project-visual ${project.color}`}>
-                  <span className="project-mark">{project.mark}</span>
+                  <span className="project-symbol"><ProjectIcon name={project.icon} /></span>
                   <span className="project-index">PROJECT / {project.number}</span>
                   <div className="orbit"><span /></div>
                   <a href={project.href} target="_blank" rel="noreferrer" className="project-open" aria-label={`查看 ${project.title}`}><Arrow diagonal /></a>

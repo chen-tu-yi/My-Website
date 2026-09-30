@@ -5,7 +5,7 @@ import './styles.css'
 const profile = {
   name: 'CHEN TU-YI',
   role: 'Machine Learning & Software Engineer',
-  intro: '我從真實資料裡找出問題，用模型做出判斷，再把結果變成真正能被使用的系統。',
+  intro: '我是陳圖億，中山大學資訊工程系學生，目前在台達電擔任軟體開發實習生。專注於機器學習、資料分析與系統開發，喜歡把真實問題整理成可以落地的解法。',
   location: 'Kaohsiung, Taiwan',
   email: 'chentuyi1210@gmail.com',
   availability: 'OPEN TO ML / SOFTWARE OPPORTUNITIES',
@@ -17,9 +17,9 @@ const projects = [
     year: '2026',
     title: '智慧工廠決策系統',
     english: 'Smart Factory Decision Support',
-    type: 'Machine Learning / Industrial AI',
-    description: '整合 ERP、採購、製令與庫存資料，建立 Lead Time 與需求預測管線，將缺料風險、JIT 採購時點與製程瓶頸轉成可執行的決策。',
-    result: 'Test MAPE 8.07%',
+    type: 'Machine Learning / Smart Manufacturing',
+    description: '分析工廠的採購、庫存與生產資料，預估物料何時到貨、未來需要多少，以及哪些訂單可能缺料，協助現場人員提早調整採購與生產安排。',
+    result: '平均誤差約 1.12 天',
     color: 'ocean',
     mark: '智',
     href: 'https://github.com/chen-tu-yi/C1',
@@ -30,8 +30,8 @@ const projects = [
     title: '跨域視覺模型研究',
     english: 'Grounding DINO Generalization',
     type: 'Computer Vision / Research',
-    description: '以 Grounding DINO 評估工業瑕疵、醫療影像與數位病理等未知領域，分析正負提示詞與 zero-shot prompt design 對模型泛化能力的影響。',
-    result: '3 unseen domains',
+    description: '測試視覺模型面對未曾訓練過的工業瑕疵、醫療影像與數位病理時，能否正確找出目標；並比較不同文字描述方式，找出更穩定的使用方法。',
+    result: '跨 3 種專業影像場域',
     color: 'alpine',
     mark: '視',
     href: 'https://github.com/chen-tu-yi',
@@ -42,8 +42,8 @@ const projects = [
     title: '量化交易研究',
     english: 'VCP Trading Research',
     type: 'Data Engineering / Quant Research',
-    description: '將 VCP 型態、相對強度、均線、波動與成交量轉成可計算特徵，以時間序列切分驗證 XGBoost 模型，避免 look-ahead bias。',
-    result: 'Time-series validated',
+    description: '依照成長股的趨勢與價格收斂型態，建立美股資料蒐集和篩選流程；再利用股價位置、成交量與產業強度等資訊，嘗試找出可能突破的股票。',
+    result: '條件篩選＋模型研究',
     color: 'coast',
     mark: '勢',
     href: 'https://github.com/chen-tu-yi/trading-project-Stan',
@@ -124,7 +124,10 @@ function App() {
             <span className="line"><span>THAT WORK.</span></span>
           </h1>
           <div className="hero-bottom">
-            <p>{profile.intro}</p>
+            <div className="hero-intro">
+              <span>{profile.role}</span>
+              <p>{profile.intro}</p>
+            </div>
             <a className="round-link" href="#work" aria-label="查看精選作品"><Arrow /></a>
           </div>
           <div className="hero-stamp" aria-hidden="true">

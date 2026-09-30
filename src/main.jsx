@@ -20,7 +20,7 @@ const projects = [
     type: 'Interactive Web / Creative Code',
     description: '把臺灣各地的環境錄音轉譯成可探索的視覺地圖，讓聲音成為旅行的另一種入口。',
     result: '12K+ monthly visits',
-    color: 'coral',
+    color: 'ocean',
     mark: '聲',
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     type: 'Product Design / Development',
     description: '為獨立工作者打造的時間管理產品，從研究、互動設計到前端實作完整落地。',
     result: 'Product of the Day',
-    color: 'blue',
+    color: 'alpine',
     mark: '秒',
   },
   {
@@ -42,7 +42,7 @@ const projects = [
     type: 'Brand System / Web Design',
     description: '重新設計社區共食平台，讓一頓飯成為鄰里連結與剩食循環的起點。',
     result: '42% signup uplift',
-    color: 'yellow',
+    color: 'coast',
     mark: '食',
   },
 ]
@@ -124,7 +124,7 @@ function App() {
             <a className="round-link" href="#work" aria-label="查看精選作品"><Arrow /></a>
           </div>
           <div className="hero-stamp" aria-hidden="true">
-            <span>SELECTED WORK · 2024—26 · </span>
+            <span>DIVE DEEP · CLIMB HIGH · </span>
             <b>✳</b>
           </div>
         </section>
@@ -132,7 +132,7 @@ function App() {
         <div className="ticker" aria-hidden="true">
           <div className="ticker-track">
             {[0, 1].map((copy) => (
-              <span key={copy}>DESIGN WITH INTENT <b>✦</b> BUILD WITH CARE <b>✦</b> MAKE IT MEMORABLE <b>✦</b> </span>
+              <span key={copy}>DIVE BELOW THE SURFACE <b>〜</b> CLIMB ABOVE THE CLOUDS <b>△</b> MAKE IT MEMORABLE <b>✦</b> </span>
             ))}
           </div>
         </div>
